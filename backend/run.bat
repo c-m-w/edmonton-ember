@@ -1,0 +1,1 @@
+py -3 -m flask --app server run
