@@ -28,7 +28,9 @@ export default function ActionDisplay(props) {
                 </div>
                 }
             </div>
-            {render()}
+            <div className={props.useBody ? "action-body" : ""}>
+                {render()}
+            </div>
         </div>
     );
 }

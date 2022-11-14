@@ -105,6 +105,7 @@ export default function Cart() {
         <ActionDisplay 
             showCart={false}
             title={"Cart"}
+            useBody={true}
             render={() =>
                 <div className="cart-list">
                     <div>

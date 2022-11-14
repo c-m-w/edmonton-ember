@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@media only screen and (max-width: 900px) {
+	html {
+		font-size: 0.75rem;
+	}
+}
+
 body {
 	margin: 0;
 	font-family: "Source Sans Pro", sans-serif;
@@ -45,6 +51,10 @@ body {
 	border-radius: 15px;
 
 	background-color: #F5F5F5;
+}
+
+.action-body {
+	padding: 0 1rem;
 }
 
 .action h1 {
@@ -139,6 +149,38 @@ nav > a.selected {
 	transition: transform 0.1s linear;
 }
 
+@media only screen and (max-width: 900px) {
+	
+	header {
+		display: block;
+		padding-bottom: 1rem;
+	}
+
+	header h1 {
+		display: inline-block;
+		width: max-content;
+		border-bottom: 1px solid #707070;
+	}
+
+	.home-link-container {
+		width: max-content;
+		margin: 0 auto;
+	}
+
+	header h1::after {
+		display: none;
+	}
+
+	nav {
+		justify-content: space-evenly;
+		margin-top: 0.25rem;
+	}
+
+	nav a:last-child {
+		margin: 0;
+	}
+}
+
 /******************************
 *
 *	product(s)
@@ -195,8 +237,8 @@ nav > a.selected {
 }
 
 .heat-element {
-	width: 7px;
-	height: 7px;
+	width: 0.5rem;
+	height: 0.5rem;
 	border-radius: 50%;
 	background-color: white;
 	border: 1px solid #707070;
