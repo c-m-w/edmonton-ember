@@ -16,5 +16,5 @@ def verify_credentials(credentials):
     username_hash = sha256(username.encode("utf-8")).hexdigest()
     password_hash = sha256(password.encode("utf-8")).hexdigest()
 
-    return (username_hash == "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f" and
-            password_hash == "a39bec7c3dc2c0bae76cb61a3c1a37f306eeb9516fbc64960ec46de1af47918f")
+    return (username_hash == "e9058ab198f6908f702111b0c0fb5b36f99d00554521886c40e2891b349dc7a1" and
+            password_hash == "e9058ab198f6908f702111b0c0fb5b36f99d00554521886c40e2891b349dc7a1")
