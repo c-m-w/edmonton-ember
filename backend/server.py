@@ -25,12 +25,69 @@ def get_object_dict(object):
 with app.app_context():
     db.create_all()
 
-@app.route("/admin", methods=["GET"])
-def admin():
+##############################
+#
+#   user
+#
+##############################
 
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def user(path):
+
+    return send_from_directory("public/user/", "index.html")
+
+##############################
+#
+# admin
+#
+##############################
+
+@app.route("/admin", defaults={"path": ""})
+@app.route("/admin/<path:path>")
+def admin(path):
+
+    print("headers")
     print(request.headers)
+    print("cookie?")
+    print(request.cookies.get("credentials"))
+    if request.cookies.get("credentials") \
+       and verify_credentials(request.cookies.get("credentials")):
 
-    return "<h1>yo</h1>"
+        return send_from_directory("public/admin/", "index.html")
+
+    return send_from_directory("public/admin_login/", "index.html")
+
+##############################
+#
+# static js, css
+#
+##############################
+
+@app.route("/public/<path:path>/<string:file>")
+def send_static(path, file):
+
+    print("path, file")
+    print(path)
+    print(file)
+
+    return send_from_directory("public/" + path, file)
+
+##############################
+#
+# assets
+#
+##############################
+
+@app.route("/assets/<path:path>/<string:file>")
+def send_asset(path, file):
+    
+
+    print("path, file")
+    print(path)
+    print(file)
+
+    return send_from_directory("public/assets/" + path, file)
 
 ##################################################
 #
