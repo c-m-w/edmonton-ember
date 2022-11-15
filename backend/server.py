@@ -6,6 +6,8 @@ from flask import request
 from flask import render_template
 from flask_cors import CORS
 
+from OpenSSL import SSL
+
 from data import *
 from verify_credentials import verify_credentials
 from make_response import make_response
@@ -265,3 +267,11 @@ def admin_api_data_id(type, id):
         return make_response(True)
         
     return make_response(False)
+
+if __name__ == "__main__":
+
+    ssl_context = SSL.Context(SSL.SSLv23_METHOD)
+    ssl_context.use_privatekey_file("eember_ca.key")
+    ssl_context.use_certificate_file("eember_ca.crt")
+
+    app.run(debug=True, host="0.0.0.0", port="80", ssl_context=("eember_ca.crt", "eember_ca.key"))
