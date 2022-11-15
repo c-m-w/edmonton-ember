@@ -270,8 +270,6 @@ def admin_api_data_id(type, id):
 
 if __name__ == "__main__":
 
-    ssl_context = SSL.Context(SSL.SSLv23_METHOD)
-    ssl_context.use_privatekey_file("eember_ca.key")
-    ssl_context.use_certificate_file("eember_ca.crt")
+    context = ("eember_ca.crt", "eember_ca.key")
 
-    app.run(debug=True, host="0.0.0.0", port="80", ssl_context=("eember_ca.crt", "eember_ca.key"))
+    app.run(debug=True, host="0.0.0.0", port="80", ssl_context=context)
