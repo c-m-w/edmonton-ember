@@ -1,5 +1,6 @@
 ### server.py
 
+import sys
 import json
 from flask import Flask, send_from_directory
 from flask import request
@@ -270,6 +271,15 @@ def admin_api_data_id(type, id):
 
 if __name__ == "__main__":
 
-    context = ("eember_ca.crt", "eember_ca.key")
+    print("arguments")
+    print(sys.argv)
 
-    app.run(debug=True, host="0.0.0.0", port="80", ssl_context=context)
+    if "--secure" in sys.argv:
+
+        app.run(debug=True, host="0.0.0.0", port="5000")
+
+    else:
+
+        context = ("eember_ca.crt", "eember_ca.key")
+
+        app.run(debug=True, host="0.0.0.0", port="443", ssl_context=context)
