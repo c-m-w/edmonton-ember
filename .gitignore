@@ -30,3 +30,5 @@ backend/venv/*
 backend/__pycache__/*
 *.crt
 *.key
+backend/instance/test.db
+backend/passwords.py
