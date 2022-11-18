@@ -274,7 +274,7 @@ if __name__ == "__main__":
     print("arguments")
     print(sys.argv)
 
-    if "--secure" in sys.argv:
+    if not "--secure" in sys.argv:
 
         app.run(debug=True, host="0.0.0.0", port="5000")
 

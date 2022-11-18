@@ -7,24 +7,6 @@ import {useState, useEffect} from "react";
 export default function Header() {
 
     const {pathname} = useLocation();
-    const [width, setWidth] = useState(0);
-
-    console.log(window.screen.width);
-
-    const setWidthWrapper = () => {
-
-        setWidth(window.screen.width);
-    }
-
-    useEffect(() => {
-
-        window.addEventListener('resize', setWidthWrapper);
-
-        return () => {
-
-          window.removeEventListener('resize', setWidthWrapper)
-        }
-      }, []);
 
     return (
         <header>
@@ -32,30 +14,23 @@ export default function Header() {
                 <Link 
                     to="/"
                     className="home-link">
-                    <h1>Edmonton ember</h1>
+                    <img src="/assets/images/logo.png" />
                 </Link>
             </div>
 
             <nav>
                 <Link 
+                    to="/" 
+                    className={pathname === "/" ? "selected" : ""}>
+                        Home</Link>
+                <Link 
                     to="/products/peppers" 
-                    className={pathname === "/products/peppers" ? "selected" : ""}>
-                        Peppers</Link>
+                    className={pathname.includes("products") ? "selected" : ""}>
+                        Products</Link>
                 <Link 
-                    to="/products/seeds" 
-                    className={pathname === "/products/seeds" ? "selected" : ""}>
-                        Seeds</Link>
-                <Link 
-                    to="/products/cuttings" 
-                    className={pathname === "/products/cuttings" ? "selected" : ""}>
-                        Cuttings</Link>
-                {window.screen.width > 900 && // todo find somewhere else to put this
-                    <Link 
-                    to="/contact"
+                    to="/contact" 
                     className={pathname === "/contact" ? "selected" : ""}>
-                        Contact
-                    </Link>
-                }
+                        Contact</Link>
             </nav>
         </header>
     );
