@@ -9,9 +9,14 @@ from flask_cors import CORS
 
 from OpenSSL import SSL
 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from data import *
 from verify_credentials import verify_credentials
 from make_response import make_response
+from send_mail import send_mail
+from get_order_html import get_order_html
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -151,7 +156,7 @@ def user_order():
 
         items.append(itemData)
 
-    print("items")
+    print("order items")
     print(items)
 
     db.session.add(Order(
@@ -160,6 +165,8 @@ def user_order():
         fulfilled=False
     ))
     db.session.commit()
+
+    send_mail(data["contactInfo"]["email"], "[EE] Order Recieved", get_order_html(data["contactInfo"], items))
 
     return make_response(True)
 
