@@ -92,7 +92,7 @@ export default function Cart() {
         return (
             <ActionDisplay 
                 showCart={false}
-                title={"Cart"}
+                renderIdentifier={() => <h1>Cart</h1>}
                 render={() =>
                     <div className="empty-action">
                         <h1>No items in cart...</h1>
@@ -104,7 +104,7 @@ export default function Cart() {
     return (
         <ActionDisplay 
             showCart={false}
-            title={"Cart"}
+            renderIdentifier={() => <h1>Cart</h1>}
             useBody={true}
             render={() =>
                 <div className="cart-list">

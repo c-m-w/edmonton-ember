@@ -1,7 +1,8 @@
 /// Products.js
 
-import {useParams, Link} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
+import ProductNavigator from "../components/ProductNavigator";
 import ActionDisplay from "../components/ActionDisplay";
 import Product from "../components/Product";
 
@@ -23,7 +24,7 @@ export default function Products() {
         return (
             <ActionDisplay 
                 showCart={true}
-                title={params.category}
+                renderIdentifier={() => <ProductNavigator />}
                 render={() =>
                     <div className="empty-action">
                         <h1>No products here...</h1>
@@ -35,7 +36,7 @@ export default function Products() {
     return (
         <ActionDisplay 
             showCart={true}
-            title={params.category}
+            renderIdentifier={() => <ProductNavigator />}
             render={() =>
                 <div className="product-list">
                     {productElements}
