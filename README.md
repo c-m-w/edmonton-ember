@@ -18,21 +18,21 @@ The admin panel. This is where products can be added, edited, etc. This is also 
 
 #### /admin/products
 
-[!Screenshot](./screenshots/admin-product-list.png)
+![Screenshot](screenshots/admin-product-list.png)
 
 #### /admin/products/:id
 
-[!Screenshot](./screenshots/admin-edit-product.png)
+![Screenshot](screenshots/admin-edit-product.png)
 
 #### /admin/orders
 
-[!Screenshot](./screenshots/admin-order-list.png)
+![Screenshot](screenshots/admin-order-list.png)
 
 #### /admin/orders/:id
 
-[!Screenshot](./screenshots/admin-view-order-unfulfilled.png)
+![Screenshot](screenshots/admin-view-order-unfulfilled.png)
 
-[!Screenshot](./screenshots/admin-view-order-fulfilled.png)
+![Screenshot](screenshots/admin-view-order-fulfilled.png)
 
 ## /backend
 
