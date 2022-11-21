@@ -1,4 +1,4 @@
-# EDMONTON_EMBER
+# EDMONTON EMBER
 
 This website consists of four components: user, admin, admin_login, and the backend.
 
