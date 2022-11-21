@@ -1,13 +1,13 @@
-/// Home.js
+/// Contact.js
 
 import ActionDisplay from "../components/ActionDisplay";
 
-export default function Home() {
+export default function Contact() {
 
     return (
         <ActionDisplay 
             showCart={false}
-            renderIdentifier={() => <h1>Home</h1>}
+            renderIdentifier={() => <h1>Contact</h1>}
             render={() =>
                 <div className="empty-action">
                     <h1>Nothing to see here...</h1>

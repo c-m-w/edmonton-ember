@@ -77,7 +77,8 @@ button:focus {
 }
 
 .action-header-identifier > h1 {
-	margin: 0.125rem 1rem;
+	font-size: 1.5rem;
+	margin: 0.5rem 1rem;
 }
 
 .empty-action h1 {
@@ -167,7 +168,7 @@ header nav a.selected {
 	text-decoration: underline;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
 	header {
 		flex-direction: column;
 	}
@@ -195,13 +196,13 @@ header nav a.selected {
 .product-list {
 	padding: 1rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 18.75rem);
+	grid-template-columns: repeat(auto-fit, 22rem);
 	gap: 1rem;
 	align-items: center;
 }
 
 .product {
-	width: 18.75rem;
+	width: 22rem;
 	background-color: white;
 	border: 1px solid #707070;
 	border-radius: 5px;
@@ -371,7 +372,7 @@ header nav a.selected {
 	transition: background-color 0.2s linear;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
 	.product-list {
 		display: block;
 	}
@@ -381,7 +382,7 @@ header nav a.selected {
 		justify-content: flex-start;
 		align-items: flex-start;
 		width: 100%;
-		height: 150px;
+		height: 165px;
 	}
 
 	.product:not(:last-of-type) {
@@ -607,7 +608,7 @@ form input:focus {
 	padding: 0;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
 	.cart-item-info-top {
 		width: 100%;
 		display: block;
@@ -689,4 +690,23 @@ form button:not(:disabled):hover {
 
 form button:disabled:hover {
 	cursor: not-allowed;
+}
+
+/******************************
+*
+*	thank-you
+*
+******************************/
+
+.thank-you h1 {
+	text-transform: uppercase;
+	font-weight: 200;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.thank-you h2 {
+	font-weight: 400;
+	text-align: center;
+	margin-top: 0.5rem;
 }

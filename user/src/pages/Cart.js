@@ -2,6 +2,8 @@
 
 import {useState} from "react";
 
+import {useNavigate} from "react-router-dom";
+
 import ActionDisplay from "../components/ActionDisplay";
 
 import useCart from "../hooks/useCart";
@@ -22,6 +24,7 @@ export default function Cart() {
                         && orderInfo.email
                         && orderInfo.phone
                         && orderInfo.payment;
+    const navigate = useNavigate();
     let total = 0;
 
     const orderInfoChange = (e) => {
@@ -39,6 +42,8 @@ export default function Cart() {
         if (response.success) {
 
             cart.clear();
+
+            navigate("/thank-you");
             
         } else {
 

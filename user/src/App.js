@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
 	return (
@@ -21,6 +23,12 @@ function App() {
 				} />
 				<Route path="/cart" element={
 					<Cart />
+				} />
+				<Route path="/contact" element={
+					<Contact />
+				} />
+				<Route path="/thank-you" element={
+					<ThankYou />
 				} />
 			</Routes>
 		</>
