@@ -2,7 +2,7 @@
 
 This website consists of four components: user, admin, admin_login, and the backend.
 
-## /user/
+## /user
 
 The program for the user interface which customers will use.
 
@@ -37,3 +37,12 @@ The admin panel. This is where products can be added, edited, etc. This is also 
 ## /backend
 
 The Flask application which controls the API of the website. It also is responsible for sending static javascript and css files and allowing or disallowing the admin panel to be sent to the client.
+
+## TODO
+
+* Customers should confirm orders with links sent to their emails
+    * If they do not confirm the order within a certain time period, the order is cancelled and products are added back to stock
+    * Need cron jobs and another python script for this
+* Viewing orders that have been placed
+    * Cancelling orders that have been placed
+* Error message popups
