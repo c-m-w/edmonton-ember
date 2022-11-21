@@ -43,6 +43,7 @@ The Flask application which controls the API of the website. It also is responsi
 * Customers should confirm orders with links sent to their emails
     * If they do not confirm the order within a certain time period, the order is cancelled and products are added back to stock
     * Need cron jobs and another python script for this
+    * Also need to add more states to orders other than unfulfilled/fulfilled
 * Viewing orders that have been placed
     * Cancelling orders that have been placed
 * Error message popups
