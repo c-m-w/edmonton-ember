@@ -1,5 +1,6 @@
 ### server.py
 
+import os
 import sys
 import json
 from flask import Flask, send_from_directory
@@ -283,7 +284,8 @@ if __name__ == "__main__":
 
     if not "--secure" in sys.argv:
 
-        app.run(debug=True)
+        server_port = int(os.environ.get("PORT", 5000)) 
+        app.run(debug=False, port=server_port, host='0.0.0.0')
 
     else:
 
