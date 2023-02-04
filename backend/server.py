@@ -20,7 +20,7 @@ from send_mail import send_mail
 from get_order_html import get_order_html
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://backend/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 CORS(app)
 db.init_app(app)
 
