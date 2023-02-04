@@ -283,7 +283,7 @@ if __name__ == "__main__":
 
     if not "--secure" in sys.argv:
 
-        app.run(debug=True, host="0.0.0.0", port="80")
+        app.run(debug=True)
 
     else:
 
