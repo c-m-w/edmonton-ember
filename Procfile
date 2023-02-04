@@ -1,1 +1,1 @@
-web: python3 backend/server.py
+web: sudo python3 backend/server.py
