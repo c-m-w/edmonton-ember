@@ -10,7 +10,7 @@ def patch_js(file):
 
     str = f.read()
     f.close()
-    str = str.replace("http://10.0.1.64:5000", "https://eember.ca")
+    str = str.replace("http://10.0.1.64:5000", "http://localhost:80")
 
     f = open(file, "w")
     f.write(str)
@@ -22,7 +22,8 @@ def patch_html(file, root):
 
     str = f.read()
     f.close()
-    str = str.replace("/static", "/public/" + root + "/static")
+    if (str.startswith("/static")):
+        str = str.replace("/static", "/public/" + root + "/static")
 
     f = open(file, "w")
     f.write(str)
