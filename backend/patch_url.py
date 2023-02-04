@@ -10,7 +10,7 @@ def patch_js(file):
 
     str = f.read()
     f.close()
-    str = str.replace("https://localhost:80", "https://edmonton-ember.herokuapp.com")
+    str = str.replace("http://localhost:80", "https://edmonton-ember.herokuapp.com")
 
     f = open(file, "w")
     f.write(str)
