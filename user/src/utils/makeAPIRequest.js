@@ -2,7 +2,7 @@
 
 export default async function makeAPIRequest(endpoint, method, body) {
 
-    const response = await(await fetch(`http://10.0.1.64:5000/api/user/${endpoint}`, {
+    const response = await(await fetch(`http://10.0.1.50:5000/api/user/${endpoint}`, {
         method: method,
         headers: {
             "Accept": "application/json",

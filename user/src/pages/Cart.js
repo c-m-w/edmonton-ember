@@ -59,7 +59,6 @@ export default function Cart() {
 
     const cartElements = cart.cartItems.map((item, i) => {
     
-        console.log(item);
         const itemPrice = item.sizeInfo.price * item.count;
         total += itemPrice;
 

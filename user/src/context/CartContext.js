@@ -37,8 +37,6 @@ class CartContextProvider extends Component {
 
     removeItem = (index) => {
 
-        console.log("REMOVING ITEM");
-        console.log(index)
         this.setState(oldState => ({cartItems: oldState.cartItems.filter((item, i) => i !== index)}));
     }
 
@@ -50,15 +48,11 @@ class CartContextProvider extends Component {
     componentDidMount() {
 
         this.load();
-        console.log("loaded cart");
-        console.log(this.state);
     }
 
     componentDidUpdate() {
 
         this.save();
-        console.log("new cart state");
-        console.log(this.state);
     }
 
     render() {

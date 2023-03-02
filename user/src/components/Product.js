@@ -16,11 +16,6 @@ export default function Product(props) {
     let heatElements = [];
     let countElements = [];
 
-    console.log("cart context");
-    console.log(cart);
-    console.log("props here");
-    console.log(props);
-
     const getSelectedSize = () => {
 
         return sizes.filter(size => size.id == sizeSelection)[0];
@@ -53,12 +48,10 @@ export default function Product(props) {
     if (sizeSelection !== -1) {
 
         const selectedSize = getSelectedSize();
-        console.log("selected size")
-        console.log(selectedSize);
 
         for (let i = 0; i < Math.min(selectedSize.stock, 5); i++) {
             
-            countElements.push(<option value={i+1}>x{i+1}</option>);
+            countElements.push(<option value={i+1} key={i}>x{i+1}</option>);
         }
     } else {
 
@@ -67,7 +60,6 @@ export default function Product(props) {
 
     const sizeElements = sizes.map((size, i) => {
 
-        console.log(size);
         return (
             <SizeSelection 
                 key={i}
