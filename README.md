@@ -8,7 +8,7 @@ The program for the user interface which customers will use.
 
 ## /admin_login
 
-Login for the admin panel. You must access this page first to login in order for the actual admin panel to be sent to you.
+Login for the admin panel. You must access this page first to login in order for the actual admin panel to be sent to you. The server will only send the admin app to the client if the Authorization cookie is set with valid credentials. Otherwise, the login app will be sent.
 
 ## /admin
 
