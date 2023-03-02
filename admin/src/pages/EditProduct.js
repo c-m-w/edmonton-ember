@@ -20,8 +20,6 @@ export default function EditProduct() {
 
         const response = await makeAPIRequest(`data/products/${params.id}`, "GET");
 
-        console.log("response from get");
-        console.log(response);
         if (response.success) {
 
             setData(response.data);
@@ -37,9 +35,6 @@ export default function EditProduct() {
 
         const response = await makeAPIRequest(`data/sizes/${data.id}`, "GET");
 
-        console.log("response from get sizes");
-        console.log(response);
-
         if (response.success) {
 
             setSizes(response.data);
@@ -49,9 +44,6 @@ export default function EditProduct() {
     const deleteItem = async () => {
 
         const response = await makeAPIRequest(`data/products/${params.id}`, "DELETE");
-
-        console.log("delete response");
-        console.log(response)
 
         if (response.success) {
 
@@ -72,7 +64,6 @@ export default function EditProduct() {
     const changeData = (e) => {
         
         setData(oldData => ({...oldData, [e.target.name]: e.target.value}));
-        console.log(data);
     }
 
     const addSize = async () => {
@@ -97,11 +88,6 @@ export default function EditProduct() {
         sizeCopy.available = typeof(sizeCopy.available) === "string" ? sizeCopy.available === "true" : sizeCopy.available
 
         const response = await makeAPIRequest(`data/sizes/${sizeCopy.id}`, "PUT", sizeCopy);
-
-        if (response.succcess) {
-
-            console.log("saved size" + i);
-        }
     }
 
     const saveEdit = async () => {
@@ -131,12 +117,6 @@ export default function EditProduct() {
         sizesCopy[i][e.target.name] = e.target.value;
         setSizes(sizesCopy);
         saveSize(i, sizesCopy[i]);
-
-        console.log("params")
-        console.log(e.target.value);
-        console.log(e.target.name);
-        console.log(i);
-        console.log(sizes);
     }
 
     useEffect(() => {getData()}, []);

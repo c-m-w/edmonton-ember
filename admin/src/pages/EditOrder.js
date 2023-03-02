@@ -34,8 +34,6 @@ export default function EditOrder() {
         if (response.success) {
 
             setData(response.data);
-            console.log("data right from server")
-            console.log(response.data);
         }
     }
 
@@ -73,7 +71,6 @@ export default function EditOrder() {
 
     const itemElements = items && items.map((item, i) => {
 
-        console.log(item);
         const price = item.count * item.size_info.price;
         total += price;
 
@@ -98,10 +95,6 @@ export default function EditOrder() {
             </div>
         )
     })
-
-    console.log(contact);
-    console.log("items")
-    console.log(items);
 
     return (
         <>

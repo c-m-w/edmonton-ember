@@ -32,7 +32,6 @@ export default function ViewOrders() {
 
     const orderElements = orderList.map((order, i) => {
 
-        console.log(order);
         const contact = JSON.parse(order.contact);
         const fulfilledState = <span className="state fulfilled">(Fulfilled)</span>;
         const unfulfilledState = <span className="state unfulfilled">(Unfulfilled)</span>;

@@ -56,9 +56,6 @@ def user(path):
 @app.route("/admin/<path:path>")
 def admin(path):
 
-    print("headers")
-    print(request.headers)
-    print("cookie?")
     print(request.cookies.get("credentials"))
     if request.cookies.get("credentials") \
        and verify_credentials(request.cookies.get("credentials")):
@@ -76,10 +73,6 @@ def admin(path):
 @app.route("/public/<path:path>/<string:file>")
 def send_static(path, file):
 
-    print("path, file")
-    print(path)
-    print(file)
-
     return send_from_directory("public/" + path, file)
 
 ##############################
@@ -90,11 +83,6 @@ def send_static(path, file):
 
 @app.route("/assets/<path:path>/<string:file>")
 def send_asset(path, file):
-    
-
-    print("path, file")
-    print(path)
-    print(file)
 
     return send_from_directory("public/assets/" + path, file)
 
@@ -129,8 +117,6 @@ def user_api_sizes(id):
 @app.route("/api/user/order", methods=["POST"])
 def user_order():
 
-    print("order request")
-    print(request.json)
     data = request.json
     items = []
 
@@ -156,9 +142,6 @@ def user_order():
         }
 
         items.append(itemData)
-
-    print("order items")
-    print(items)
 
     db.session.add(Order(
         contact=json.dumps(data["contactInfo"]),
@@ -196,9 +179,6 @@ def admin_api_data(type):
         data = []
         for item in query:
             data.append(get_object_dict(item))
-
-        print("data")
-        print(data)
         
         return make_response(True, data)
 
